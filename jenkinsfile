@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Deploying Web Server') {
+            steps {
+                script {
+                    // Copying files to the deployment directory
+                    sh 'cp -r * /var/www/html'
+
+                    // Additional deployment steps can be added here if needed
+                    // e.g., restart the web server or perform other tasks
+                    // sh 'systemctl restart your-web-server'
+                }
+            }
+        }
+    }
